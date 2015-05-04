@@ -1,3 +1,5 @@
+source /opt/boxen/env.sh
+
 # modify the prompt to contain git branch name if applicable
 git_prompt_info() {
   ref=$(git symbolic-ref HEAD 2> /dev/null)
@@ -25,8 +27,10 @@ eval "$(rbenv init -)"
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
 
 fpath=(~/.zsh $fpath)
+fpath=(/opt/boxen/homebrew/share/zsh-completions $fpath)
 
 source ~/.git-completion.bash
+source /opt/boxen/env.sh
 
 # aliases
 [[ -f ~/.aliases ]] && source ~/.aliases
