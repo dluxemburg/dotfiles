@@ -1,5 +1,9 @@
-[[ -s "$HOME/.bashrc" ]] && source "$HOME/.profile" # Load the default .bashrc
+[[ -s "$HOME/.bashrc" ]] && source "$HOME/.profile" # Load .bashrc
 
 [[ -s "$HOME/.profile" ]] && source "$HOME/.profile" # Load the default .profile
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+eval "$(rbenv init -)"
+
+### Added by the Heroku Toolbelt
+export PATH="$PATH:/usr/local/heroku/bin"
+

@@ -1,4 +1,5 @@
-export PATH="$PATH:$HOME/bin:$HOME/usr/local/bin:$HOME/usr/bin:$HOME/usr/sbin"
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+export PATH="$HOME/.bin:$HOME/bin:$HOME/usr/local/bin:$HOME/usr/bin:$HOME/usr/sbin:$PATH"
 
-JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_25.jdk/Contents/Home
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_71.jdk/Contents/Home
+
+source ~/.git-completion.bash
