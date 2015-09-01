@@ -2,7 +2,7 @@
 	name = Daniel Luxemburg
 	email = daniel.luxemburg@gmail.com
 [push]
-  default = current
+  default = simple
 [color]
   ui = auto
 [alias]
@@ -13,8 +13,19 @@
   ci = commit -v
   co = checkout
   st = status
-	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
-[merge]
-  ff = only
+  lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+  cleanup = "!git branch --merged | grep  -v '\\*\\|master' | xargs -n 1 git branch -d"
 [fetch]
   prune = true
+
+[hub]
+protocol = https
+
+[init]
+templatedir = /Users/daniel/.git_template
+
+[credential]
+helper = /opt/boxen/bin/boxen-git-credential
+
+[core]
+excludesfile = /opt/boxen/config/git/gitignore_genius
