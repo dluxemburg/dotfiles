@@ -28,4 +28,10 @@ templatedir = /Users/daniel/.git_template
 helper = /opt/boxen/bin/boxen-git-credential
 
 [core]
-excludesfile = /opt/boxen/config/git/gitignore_genius
+	excludesfile = /opt/boxen/config/git/gitignore_genius
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
