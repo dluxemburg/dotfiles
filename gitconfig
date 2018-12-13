@@ -16,22 +16,14 @@
   lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
   cleanup = "!git branch --merged | grep  -v '\\*\\|master' | xargs -n 1 git branch -d"
 [fetch]
-  prune = true
-
+    prune = true
 [hub]
-protocol = https
-
-[init]
-templatedir = /Users/daniel/.git_template
-
-[credential]
-helper = /opt/boxen/bin/boxen-git-credential
-
-[core]
-	excludesfile = /opt/boxen/config/git/gitignore_genius
+  protocol = https
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
+	path =
 [mergetool "sourcetree"]
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
+[include]
+  path = ~/.gitconfig.local
